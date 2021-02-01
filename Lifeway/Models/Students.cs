@@ -9,10 +9,19 @@ namespace Lifeway.Models
     public class Students
     {
         [Key]
-        public int Adm_no { get; set; }
-        public string Name { get; set; }
-        public string Grade { get; set; }
-        public DateTime EnrollmentDate { get; set; }
+        public int adm_no { get; set; }
+        public string name { get; set; }
+        public string dob { get; set; }
+        public string Class { get; set; }
+        public string date_of_admission { get; set; }
+        public string parent_name { get; set; }
+        public string parent_contact { get; set; }
+        public string alt_contact { get; set; }
+        public string status { get; set; }
+        public string former_school { get; set; }
+        public string place_of_residence { get; set; }
+
+
 
     }
 }

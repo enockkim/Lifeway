@@ -21,21 +21,42 @@ namespace Lifeway.Data.Migrations
 
             modelBuilder.Entity("Lifeway.Models.Students", b =>
                 {
-                    b.Property<int>("Adm_no")
+                    b.Property<int>("adm_no")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("EnrollmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Grade")
+                    b.Property<string>("Class")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("alt_contact")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Adm_no");
+                    b.Property<string>("date_of_admission")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("dob")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("former_school")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parent_contact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parent_name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("place_of_residence")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("adm_no");
 
                     b.ToTable("Students");
                 });

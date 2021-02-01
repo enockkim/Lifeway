@@ -2,88 +2,154 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lifeway.Data;
+using Lifeway.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lifeway.Controllers
 {
     public class StudentsController : Controller
     {
 
+        private readonly ApplicationDbContext _context;
 
-        //GET: StudentsController
-        public IActionResult AllStudents()
+        public StudentsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: StudentsDb
+        public async Task<IActionResult> AllStudents()
+        {
+            return View(await _context.Students.ToListAsync());
+        }
+
+        // GET: StudentsDb/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var students = await _context.Students
+                .FirstOrDefaultAsync(m => m.adm_no == id);
+            if (students == null)
+            {
+                return NotFound();
+            }
+
+            return View(students);
+        }
+
+        // GET: StudentsDb/Create
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: StudentsController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: StudentsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: StudentsController/Create
+        // POST: StudentsDb/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create([Bind("adm_no,name,Class,date_of_admission")] Students students)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                _context.Add(students);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(AllStudents));
             }
-            catch
-            {
-                return View();
-            }
+            return View(students);
         }
 
-        // GET: StudentsController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: StudentsDb/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var students = await _context.Students.FindAsync(id);
+            if (students == null)
+            {
+                return NotFound();
+            }
+            return View(students);
         }
 
-        // POST: StudentsController/Edit/5
+        // POST: StudentsDb/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, [Bind("adm_no,name,Class,EnrollmentDate")] Students students)
         {
-            try
+            if (id != students.adm_no)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            if (ModelState.IsValid)
             {
-                return View();
+                try
+                {
+                    _context.Update(students);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!StudentsExists(students.adm_no))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(AllStudents));
             }
+            return View(students);
         }
 
-        // GET: StudentsController/Delete/5
-        public ActionResult Delete(int id)
+        // GET: StudentsDb/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var students = await _context.Students
+                .FirstOrDefaultAsync(m => m.adm_no == id);
+            if (students == null)
+            {
+                return NotFound();
+            }
+
+            return View(students);
         }
 
-        // POST: StudentsController/Delete/5
-        [HttpPost]
+        // POST: StudentsDb/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var students = await _context.Students.FindAsync(id);
+            _context.Students.Remove(students);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(AllStudents));
         }
+
+        private bool StudentsExists(int id)
+        {
+            return _context.Students.Any(e => e.adm_no == id);
+        }
+
     }
 }

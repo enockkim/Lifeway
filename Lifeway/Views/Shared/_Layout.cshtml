@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Microsoft.AspNetCore.Identity
+@*@using Microsoft.AspNetCore.Identity*@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <!DOCTYPE html>
@@ -94,13 +94,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a asp-controller="Students" asp-action="Classes" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Classes</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a asp-controller="Students" asp-action="Register" class="nav-link">
+                                            <a asp-controller="Students" asp-action="Create" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Register</p>
                                             </a>
@@ -224,13 +218,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a asp-controller="Students" asp-action="Classes" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Classes</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a asp-controller="Students" asp-action="Register" class="nav-link">
+                                            <a asp-controller="Students" asp-action="Create" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Register</p>
                                             </a>
@@ -447,7 +435,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2021 <a>Lifeway Educational Point Limited</a>.</strong>
+            <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a>Lifeway Educational Point Limited</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> Beta 1.0.0
