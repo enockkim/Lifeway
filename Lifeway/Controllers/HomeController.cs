@@ -19,12 +19,12 @@ namespace Lifeway.Controllers
             _logger = logger;
         }
 
-        public ActionResult Students()
-        {
-            return View();
-        }
+        //public ActionResult Students()
+        //{
+        //    return View();
+        //}
 
-        [Authorize(Roles = "super_admin")]
+        [Authorize(Roles = "super_admin,admin,teacher,finance")]
         public IActionResult Index()
         {
             return View();

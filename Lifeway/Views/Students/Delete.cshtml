@@ -1,4 +1,4 @@
-﻿@*@model Lifeway.Models.Students
+﻿@model Lifeway.Models.Students
 
 @{
     ViewData["Title"] = "Delete";
@@ -14,30 +14,72 @@
             <hr />
             <dl class="row">
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Html.DisplayNameFor(model => model.name)
                 </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Name)
+                    @Html.DisplayFor(model => model.name)
                 </dd>
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Grade)
+                    @Html.DisplayNameFor(model => model.dob)
                 </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Grade)
+                    @Html.DisplayFor(model => model.dob)
                 </dd>
                 <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                    @Html.DisplayNameFor(model => model.Class)
                 </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.EnrollmentDate)
+                    @Html.DisplayFor(model => model.Class)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.date_of_admission)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.date_of_admission)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.parent_name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.parent_name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.parent_contact)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.parent_contact)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.alt_contact)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.alt_contact)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.status)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.status)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.former_school)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.former_school)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.place_of_residence)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.place_of_residence)
                 </dd>
             </dl>
 
             <form asp-action="Delete">
-                <input type="hidden" asp-for="Adm_no" />
+                <input type="hidden" asp-for="adm_no" />
                 <input type="submit" value="Delete" class="btn btn-danger" /> |
                 <a asp-action="AllStudents">Back to List</a>
             </form>
         </div>
         </div>
-    </div>*@
+    </div>

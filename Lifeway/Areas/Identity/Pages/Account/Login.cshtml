@@ -46,12 +46,12 @@
             </section>
         </div>
     </div>*@
-<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+@*<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
     <div class="card card0 border-0">
         <div class="row d-flex">
             <div class="col-lg-6">
                 <div class="card1 pb-5">
-                    <div class="row"> <img src="~/dist/img/lifeway.png" class="logo"> </div>
+                    <div class="row"> <img class="logo"> </div>
                     <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="~/dist/img/lifeway.png" class="image"> </div>
                 </div>
             </div>
@@ -85,12 +85,52 @@
             </div>
         </div>
     </div>
-    <div class="bg-blue py-4">
-        <div class="row px-3">
-            <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2019. All rights reserved.</small>
-            <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
-        </div>
+    </div>*@
+
+
+
+<div class="wrap-login100">
+    <div class="login100-pic js-tilt" data-tilt>
+        <img src="~/dist/img/lifeway.png" alt="IMG">
     </div>
+    <form class="login100-form validate-form">
+        <span class="login100-form-title">
+            User Login
+        </span>
+        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="Email">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+                Login
+            </button>
+        </div>
+        <div class="text-center p-t-12">
+            <span class="txt1">
+                Forgot
+            </span>
+            <a class="txt2" href="#">
+                Username / Password?
+            </a>
+        </div>
+        <div class="text-center p-t-136">
+            <a class="txt2" href="#">
+                Create your Account
+                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+            </a>
+        </div>
+    </form>
 </div>
 
 

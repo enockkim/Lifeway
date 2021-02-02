@@ -1,4 +1,4 @@
-﻿@*@model Lifeway.Models.Students
+﻿@model Lifeway.Models.Students
 
 @{
     ViewData["Title"] = "Create";
@@ -17,19 +17,57 @@
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="Name" class="control-label"></label>
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Grade" class="control-label"></label>
-                        <input asp-for="Grade" class="form-control" />
-                        <span asp-validation-for="Grade" class="text-danger"></span>
+                        <label asp-for="Class" class="control-label"></label>
+                        <input asp-for="Class" class="form-control" />
+                        <span asp-validation-for="Class" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="EnrollmentDate" class="control-label"></label>
-                        <input asp-for="EnrollmentDate" class="form-control" />
-                        <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+                        <label asp-for="dob" class="control-label"></label>
+                        <input asp-for="dob" class="form-control" />
+                        <span asp-validation-for="dob" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="date_of_admission" class="control-label"></label>
+                        <input asp-for="date_of_admission" class="form-control" />
+                        <span asp-validation-for="date_of_admission" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="parent_name" class="control-label"></label>
+                        <input asp-for="parent_name" class="form-control" />
+                        <span asp-validation-for="parent_name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="parent_contact" class="control-label"></label>
+                        <input asp-for="parent_contact" class="form-control" />
+                        <span asp-validation-for="parent_contact" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="alt_contact" class="control-label"></label>
+                        <input asp-for="alt_contact" class="form-control" />
+                        <span asp-validation-for="alt_contact" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="status" class="control-label"></label>
+                        <input asp-for="status" class="form-control" />
+                        <span asp-validation-for="status" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="former_school" class="control-label"></label>
+                        <input asp-for="former_school" class="form-control" />
+                        <span asp-validation-for="former_school" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="place_of_residence" class="control-label"></label>
+                        <input asp-for="place_of_residence" class="form-control" />
+                        <span asp-validation-for="place_of_residence" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Register" class="btn btn-primary" />
@@ -46,4 +84,4 @@
 
         @section Scripts {
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-        }*@
+        }
