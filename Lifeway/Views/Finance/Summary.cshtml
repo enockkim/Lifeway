@@ -1,0 +1,93 @@
+﻿@using Lifeway.Models 
+@model Lifeway.Models.MpesaApiConfiguration 
+@*@model Lifeway.Models.MpesaApiConfiguration*@
+
+@{ ViewData["Title"] = "Home Page"; }
+
+@{
+    var response = JObject.Parse(_datResponse)
+
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Finance</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Finance</li>
+                        <li class="breadcrumb-item active">Finance Summary</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <form action="http://portal.lifewaychristianacademy.sc.ke/paybill/balance.php" method="post">
+                <input type="submit" name="upvote" value="Check Balance" />
+            </form>
+            <p>Token: @Model.token</p>
+
+            @*<table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.adm_no)</th>
+                    <th>@Html.DisplayNameFor(model => model.name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Class)</th>
+                    <th>@Html.DisplayNameFor(model => model.date_of_admission)</th>
+                    <th>@Html.DisplayNameFor(model => model.status)</th>
+                    <th>@Html.DisplayNameFor(model => model.place_of_residence)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.adm_no)</td>
+                        <td>@Html.DisplayFor(modelItem => item.name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Class)</td>
+                        <td>@Html.DisplayFor(modelItem => item.date_of_admission)</td>
+                        <td>@Html.DisplayFor(modelItem => item.status)</td>
+                        <td>@Html.DisplayFor(modelItem => item.place_of_residence)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.adm_no">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.adm_no">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.adm_no">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.adm_no)</th>
+                    <th>@Html.DisplayNameFor(model => model.name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Class)</th>
+                    <th>@Html.DisplayNameFor(model => model.date_of_admission)</th>
+                    <th>@Html.DisplayNameFor(model => model.status)</th>
+                    <th>@Html.DisplayNameFor(model => model.place_of_residence)</th>
+                    <th>Actions</th>
+                </tr>
+            </tfoot>
+        </table>*@
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <!-- /.row -->
+            <!-- Main row -->
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

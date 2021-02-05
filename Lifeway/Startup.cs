@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MpesaSdk;
+using MpesaSdk.Interfaces;
 
 namespace Lifeway
 {
@@ -44,6 +46,18 @@ namespace Lifeway
                  .AddDefaultTokenProviders();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //MpesaLib
+            //services.AddHttpClient<IMpesaClient, MpesaClient>(options => options.BaseAddress = RequestEndPoint.SandboxBaseAddress);
+            //services.AddHttpClient<IMpesaClient, MpesaClient>(options => options.BaseAddress = RequestEndPoint.LiveBaseAddress);
+
+            //MpesaSdk
+
+            //services.Configure<MpesaApiConfiguration>(options =>
+            //{
+            //    Configuration.GetSection("MpesaApiConfiguration").Bind(options);
+            //});
+            //services.AddHttpClient<IMpesaClient, MpesaClient>(options => options.BaseAddress = MpesaRequestEndpoint.LiveBaseAddress);
 
             //services.AddDatabaseDeveloperPageExceptionFilter();
 
